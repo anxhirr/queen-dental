@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Image from "next/image";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { X } from "lucide-react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const PromoModal = () => {
   const [open, setOpen] = useState(false);
@@ -29,6 +29,7 @@ const PromoModal = () => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent className="sm:max-w-md p-0 border-none bg-transparent shadow-none">
+        <DialogTitle />
         <div className="relative bg-primary-500 text-white rounded-md overflow-hidden">
           {/* Close button */}
           <button
@@ -83,7 +84,10 @@ const PromoModal = () => {
                     className="bg-white/10 border-white/20 text-white placeholder:text-white/70"
                   />
                 </div>
-                <Button type="submit" className="w-full bg-white text-primary-500 hover:bg-white/90">
+                <Button
+                  type="submit"
+                  className="w-full bg-white text-primary-500 hover:bg-white/90"
+                >
                   Inviare
                 </Button>
               </form>
